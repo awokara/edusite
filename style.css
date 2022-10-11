@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.icon{color: aliceblue;}
+.bg-navy{ background: rgb(0, 0, 51);}
+
+.text-navy{ color: navy;}
+
+.first:hover{ text-decoration: none;  color: rgb(255, 162, 0); background: white;}
+
+.border{border: 5px solid; height: 190px;}
+
+.border1{border: 5px solid red; height: 200px; width: 500px;}
+
+.cs1{text-align: center;}
+
+.pen{gap: 10px;}
+
+.online{font-size: 20px;   font-weight: bold;}
+
+.online1{ font-size: 30px;}
+
+.online2{ font-size: 18px;}
+
+.bg-sky{ background: rgb(196, 189, 189);}
+
+.bg-warn{  background: rgb(255, 162, 0);}
+
+.text-warn{color: rgb(255, 162, 0);}
+
+.border2{border: 2px solid; height: 350px; width: 400px;}
+.border3{border: 2px solid; width: 250px; height: 190px;}
+
+.pen1{
+    margin: auto;
+}
+
+.btn1{border: 2px solid; border-radius: 30px;height: 40px; width: 120px; text-align: center;}
+
+.btn:hover{background: navy; color: white; } 
+
+.bg-skyb{background: aliceblue;}
+
+.icon3{
+    text-decoration: none;
+    color: white;
+}
+.text-gray{color: rgb(194, 192, 192);}
+
+.img-flex1{
+    gap: 20px;
+}
+
+.img-flex1 .img-flex4:hover{color:rgb(255, 162, 0);}
+
+.img-flex1 .img-flex5:hover{color:rgb(255, 162, 0);}
+
+.img-flex1 .img-flex6:hover{color:rgb(255, 162, 0);}
+
+.img-flex1 .img-flex7:hover{color:rgb(255, 162, 0);}
+
+.img-flex1 .img-flex8:hover{color:rgb(255, 162, 0);}
+
+.img-flex2{gap: 7px;}
+
+.img-flex{gap: 15px;}
+
+.empty{border: 2px solid white; border-bottom: 0; border-left: 0; border-right: 0;}
+
+.marq{
+    gap: 10px;
+}
+
+.show1{border: solid; height: 70px; border-color: rgb(255, 162, 0);}
+
+.show1:hover{background: rgb(255, 162, 0); color: white;}
+.inner1{background: url('./img/inner-bg.jpg'); background-size: cover; background-repeat: no-repeat; height: 200px; font-size: 30px;}
+.inner2{background: url('./img/bg_1.jpg');}
+.cap{border:1px solid  white; height: 350px;}
+
+.caro-img{
+    height: 650px;
+}
+
+
+.quick-inq{
+    width: 200px;
+}
+ @media screen and (max-width:800px){
+    .caro-img{
+        height: auto !important;
+    }
+    .quick-inq{
+        height: 60px;
+        width: 950px !important;
+    }
+  
+} 
