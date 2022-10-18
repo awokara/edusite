@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD']=="POST"){
         $isError = true;
     }elseif(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
         $eError = "Bro, put valid email now!";
-        $eError = true;
+        $iError = true;
     }else{
         $email = cleanInput($_POST['email']);
         //check the username in the db
