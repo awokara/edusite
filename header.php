@@ -32,14 +32,23 @@
               <li class="nav-item active">
                 <b><a class="nav-link text-navy" href="course.php">COURSE</a></b>
               </li>
+              
+              <li class="nav-item active">
+                <b><a class="nav-link text-navy" href="admin.php">ADMIN</a></b>
+              </li>
+              <?php if(!isset($_SESSION['loginUser'])){?>
               <li class="nav-item active">
                 <b><a class="nav-link text-navy" href="register.php">REGISTER</a></b>
               </li>
-  
+              
               <li class="nav-item active">
                 <b><a class="nav-link text-navy" href="login.php">LOGIN</a></b>
               </li>
-  
+              <?php } else { ?>
+              <li class="nav-item active">
+                <b><a class="nav-link text-navy" href="admin.php"></a>PROFILE</b>
+              </li>
+              <?php } ?>
               <li class="nav-item active">
                 <b><a class="nav-link text-navy" href="contact.php">CONTACT US</a></b>
               </li>

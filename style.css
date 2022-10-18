@@ -4,6 +4,12 @@
     font-family: sans-serif;
 }
 
+
+  #dob{
+    gap: 15px;
+    height: 30px;
+    width: 400px;
+  }
 .icon{color: aliceblue;}
 .bg-navy{ background: rgb(0, 0, 51);}
 

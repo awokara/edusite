@@ -1,6 +1,6 @@
 <?php
 if(isset($_POST['btnSave'])){
-  include 'sea-process.php';
+  include 'register-process.php';
 }
 ?>
 
@@ -9,6 +9,17 @@ if(isset($_POST['btnSave'])){
 include 'head.php';
 include 'header.php';
 ?>
+
+<style>
+  #dob{
+    gap: 15px;
+    height: 30px;
+    width: 400px;
+  }
+  .red{
+    color: red;
+  }
+</style>
 <body>
     <div class="container text-center mt-5 pb-5">
         <h1>REGISTER HERE</h1><hr>
@@ -28,28 +39,69 @@ include 'header.php';
               </div>
 
               <form action="register.php" method="post" class="">
-                <div class="col-md-6 ">
-                  <input type="text" name="fname" class="form-control" style="width: 400px; height: 60px;" id="fname" placeholder="Enter Fullname">
+                
+                <div class="col-md-6 pb-3">
+                  <input type="text" name="fname"  class="form-control" value='<?php echo isset ($fname)? $fname: ''?>'  placeholder="Enter Fullname" style="width: 400px; height: 40px;">
+                  <small class="red"><?php echo isset($fError)? $fError: '' ?></small>
                 </div>
-                <div class="col-md-6  pb-3">
+
+                <div class="col-md-6 pb-3">
+                  <input type="text" name="pnum"  class="form-control"  value='<?php echo isset ($pnum)? $pnum: ''?>'  placeholder="Phone Number" style="width: 400px; height: 40px;">
+                  <small class="red"><?php echo isset($pError)? $pError: '' ?></small>
+                </div>
+
+                <!-- <div class="col-md-6  pb-3">
                   <label for="validationDefault04"></label>
-                  <input type="date" id="birthday"  class="form-control"  style="width: 400px; height: 60px;" name="birthday">
-                </div>
+                  <input type="date" name="DOB" id="birthday"  class="form-control"  style="width: 400px; height: 40px;" name="birthday">
+                </div> -->
                 <div class="col-md-6  pb-3">
-                <input type="text" name="uname" class="form-control"  style="width: 400px; height: 60px;"  id="Username" placeholder="Username">
+                <input type="text" name="username" class="form-control" value='<?php echo isset ($username)? $username: ''?>' style="width: 400px; height: 40px;"  id="Username" placeholder="Username">
+                <small class="red"><?php echo isset($uError)? $uError: '' ?></small>
               </div>
               <div class="col-md-6  pb-3">
-                <input type="email" name="email" class="form-control"  style="width: 400px; height: 60px;" id="email" placeholder="Email Address">
+                <input type="email" name="email" class="form-control" value='<?php echo isset ($email)? $email: ''?>' style="width: 400px; height: 40px;" id="email" placeholder="Email Address">
+                <small class="red"><?php echo isset($eError)? $eError: '' ?></small>
+              </div>
+
+              <div class="col-md-6  pb-3">
+                  <p class=" text-white mt-3">Date of Birth:</p>
+                  <div class="d-flex" id="dob">
+                  <select name="dob-day" id="dob">
+                      <option value="">Choose Day</option>
+                      <?php for($i=1; $i<=31; $i++){?>
+
+                          <option value="<?php echo $i?>"> <?php echo $i?> </option>
+                      <?php }?>
+                  </select>
+                  <select name="dob-month" id="dob">
+                      <option value="">Choose Month</option>
+                      <?php for($i=1; $i<=12; $i++){?>
+
+                          <option value="<?php echo $i?>"> <?php echo $i?> </option>
+                      <?php }?>
+                  </select>
+                  <select name="dob-year" id="dob">
+                        <option value="">Choose Year</option>
+                        <?php for($i=2022; $i>=1960; $i--){?>
+
+                            <option value="<?php echo $i?>"> <?php echo $i?> </option>
+                        <?php }?>
+                    </select>
+                    </div>
+                    </div>
+
+
+              <div class="col-md-6  pb-3">
+                <input type="text" name="pass" class="form-control"  style="width: 400px; height: 40px;" id="Password" placeholder="Password">
+                <small class="red"><?php echo isset($passError)? $passError: '' ?></small>
               </div>
               <div class="col-md-6  pb-3">
-                <input type="text" name="pass" class="form-control"  style="width: 400px; height: 60px;" id="Password" placeholder="Password">
-              </div>
-              <div class="col-md-6  pb-3">
-                <input type="text" name="cpass" class="form-control"  style="width: 400px; height: 60px;" id="CPassword" placeholder="Confirm Password">
+                <input type="text" name="cpass" class="form-control"  style="width: 400px; height: 40px;" id="CPassword" placeholder="Confirm Password">
+                <small class="red"><?php echo isset($cpassError)? $cpassError: '' ?></small>
               </div>
               <!-- <button type="submit" name="btnSave">Submit</button> -->
               <div class="col-sm-12 col-md-6  w-100">
-               <button type="submit" name="btnSave"><a href="#" class="btn text-black pt-3 bg-warn" style="width: 400px; height: 60px;">Sign Up</a></button>
+                <button type="submit" name="btnSave"  class="btn text-black pt-3 bg-warn" style="width: 400px; height: 60px;">Sign Up</button>
               </div>
             </form>
             <div style="height: 50px;">

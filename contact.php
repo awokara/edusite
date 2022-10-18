@@ -36,7 +36,7 @@ include 'header.php';
 
 
                     
-                    <p id="demo1"></p>
+                    <p id="demo"></p>
                     <div class="col-md-12">
                       <div class="form-group">
                         <button type="button" onclick="myFunction()" class="text-white bg-navy" style="width: 300px; height:50px;">Submit here</button>

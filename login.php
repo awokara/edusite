@@ -1,3 +1,8 @@
+<?php session_start();
+  if(isset($_SESSION['loginUser'])){
+    header("Location: profile.php");
+  }
+?>
 <?php 
 include 'head.php';
 include 'header.php';
@@ -13,14 +18,15 @@ include 'header.php';
             <div class="col-md-6 mt-5">
                 <h2>Login Your Account</h2>
                 <small>Fill the form below with the right information to login your account</small>
+                <?php echo isset($_SESSION['mgs']) ? $_SESSION['mgs'] : ''?>
 
-                <form action="">
-                      <input type="text" class="form-control  my-3 mt-5" style="width: 400px; height: 60px;" id="fname" placeholder="Username / email address / phone number">
+                <form action="login-process.php" method="POST">
+                      <input type="text" name='user' class="form-control  my-3 mt-5" style="width: 400px; height: 60px;" id="fname" placeholder="Username or email address" required>
                     
                     
-                    <input type="text" class="form-control my-3"  style="width: 400px; height: 60px;"  id="Username" placeholder="Password">
+                    <input type="text" name='pass' class="form-control my-3"  style="width: 400px; height: 60px;"  id="Username" placeholder="Password" required>
                   
-                    <a href="#" class="btn btn-primary pt-3 bg-navy" style="width: 400px; height: 60px;">Login</a>
+                    <button type="submit" name="btnlogin" class="btn btn-primary pt-3 bg-navy" style="width: 400px; height: 60px;">Login</button>
                 </form>
             </div>
         </div>
@@ -32,7 +38,7 @@ include 'header.php';
   </section>
 
   <?php 
-include 'footer.php';
+include 'footer.php'; if(isset($_SESSION['mgs'])){unset($_SESSION['mgs']);}
 ?>
 </body>
 </html>
